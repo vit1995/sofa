@@ -1567,6 +1567,42 @@ body::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+}
+
+.hero__img-step {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 16.9375rem;
+}
+
+.hero__img-step img {
+  aspect-ratio: 1/1;
+  width: 100%;
+  height: 100%;
+  opacity: 0.55;
+  -webkit-transform: rotate(315deg);
+      -ms-transform: rotate(315deg);
+          transform: rotate(315deg);
+}
+
+.hero__img-mol {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 15.625rem;
+  display: block;
+  position: absolute;
+  margin-right: -6.25rem;
+}
+
+.hero__img-mol img {
+  aspect-ratio: 1/1;
+  width: 100%;
+  height: 100%;
+  max-width: 15.625rem;
+  opacity: 0.55;
 }
 
 .hero__title {
@@ -1746,7 +1782,7 @@ body::after {
   left: 0;
   -o-object-fit: cover;
      object-fit: cover;
-  z-index: -1;
+  z-index: 1;
 }
 
 .action__container {
@@ -1910,6 +1946,41 @@ body::after {
 
 .form-action__button {
   max-height: 3.75rem;
+}
+
+.presentation {
+  position: relative;
+}
+
+.presentation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgb(255, 255, 255)));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.5), rgb(255, 255, 255));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgb(255, 255, 255));
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 2;
+}
+
+.presentation__img-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 1;
+}
+
+.presentation__container {
+  position: relative;
+  z-index: 3;
 }
 
 .presentation__items {
@@ -2226,6 +2297,41 @@ body::after {
   color: #000000;
   line-height: 1.2;
   font-weight: 400;
+}
+
+.price {
+  position: relative;
+}
+
+.price:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgb(255, 255, 255)));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.5), rgb(255, 255, 255));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgb(255, 255, 255));
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 2;
+}
+
+.price__image-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 1;
+}
+
+.price__container {
+  position: relative;
+  z-index: 3;
 }
 
 .price__items {
@@ -4234,6 +4340,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     gap: 1.875rem;
   }
 
+  .hero__img-step {
+    margin-left: -12.5rem;
+  }
+
   .hero__title span {
     font-size: 2.3125rem;
   }
@@ -4910,6 +5020,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     gap: 0.625rem;
   }
 
+  .hero__img-step {
+    margin-left: -9.375rem;
+  }
+
   .hero__title span {
     font-size: 1.125rem;
   }
@@ -5451,6 +5565,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     text-align: center;
   }
 
+  .hero__img-step {
+    max-width: 12.5rem;
+  }
+
+  .hero__img-mol {
+    max-width: 12.5rem;
+  }
+
   .advantage-hero__item {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 6.875rem;
@@ -5588,6 +5710,16 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .footer__logo span {
     font-size: 1rem;
+  }
+
+  .hero__img-step {
+    max-width: 6.25rem;
+    margin-left: -60px;
+  }
+
+  .hero__img-mol {
+    max-width: 6.25rem;
+    margin-right: -4.375rem;
   }
 
   .advantage-hero__items {
@@ -6559,6 +6691,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 @supports not (gap: clamp( 0.625rem , 0.1994680851rem  +  2.1276595745vw , 1.875rem )) {
     .hero__container {
       gap: calc(0.625rem + 1.25 * (100vw - 20rem) / 58.75);
+    }
+}
+
+@supports (margin-left: clamp( -12.5rem , -8.3111702128rem  +  -5.3191489362vw , -9.375rem )) {
+    .hero__img-step {
+      margin-left: clamp( -12.5rem , -8.3111702128rem  +  -5.3191489362vw , -9.375rem );
+    }
+}
+
+@supports not (margin-left: clamp( -12.5rem , -8.3111702128rem  +  -5.3191489362vw , -9.375rem )) {
+    .hero__img-step {
+      margin-left: calc(-9.375rem + -3.125 * (100vw - 20rem) / 58.75);
     }
 }
 
